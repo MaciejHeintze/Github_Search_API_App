@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_corners_shape"
+    android:layout_marginTop="@dimen/card_view_top_margin"
+    android:layout_marginStart="@dimen/screen_1_start_and_end_margin"
+    android:layout_marginEnd="@dimen/screen_1_start_and_end_margin">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:id="@+id/repository_item_image_view_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="@dimen/repository_item_image_view_margin"/>
+
+    <TextView
+        android:id="@+id/repository_name_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/repository_name_text_view_text_size"
+        android:textColor="@color/colorBlack"
+        android:textStyle="normal"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="@dimen/repository_name_text_view_line_spacing_extra"
+        app:layout_constraintStart_toEndOf="@id/repository_item_image_view_id"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/repository_name_text_view_top_margin"/>
+
+    <ImageView
+        android:id="@+id/star_image_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/star_icon"
+        android:layout_margin="@dimen/star_image_view_margin"
+        app:layout_constraintStart_toStartOf="@id/repository_name_id"
+        app:layout_constraintTop_toBottomOf="@id/repository_name_id"
+        app:layout_constraintBottom_toBottomOf="@id/repository_item_image_view_id"/>
+
+    <TextView
+        android:id="@+id/number_of_stars_text_view_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/star_image_id"
+        app:layout_constraintStart_toEndOf="@id/star_image_id"
+        app:layout_constraintBottom_toBottomOf="@id/star_image_id"
+        android:textStyle="normal"
+        android:textSize="@dimen/number_of_stars_text_view_text_size"
+        android:textColor="@color/darkWhite"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="@dimen/number_of_stars_text_view_line_spacing_extra"
+        android:layout_marginStart="@dimen/number_of_stars_text_view_margin_start"/>
+
+    <ImageView
+        android:id="@+id/forward_icon_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/forward_icon"
+        android:layout_marginEnd="@dimen/forward_icon_margin_end"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

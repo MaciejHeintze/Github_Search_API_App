@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Screen 1 -->
     <dimen name="screen_1_start_and_end_margin">16dp</dimen>
     <dimen name="search_text_view_top_margin">45dp</dimen>
     <dimen name="search_text_view_text_size">34sp</dimen>
@@ -9,4 +10,16 @@
     <dimen name="repositories_line_spacing_extra">6sp</dimen>
     <dimen name="repositories_top_margin">30dp</dimen>
     <dimen name="recycler_view_top_margin">18dp</dimen>
+
+    <!-- Repository recyclerview item -->
+    <dimen name="card_view_top_margin">9dp</dimen>
+    <dimen name="repository_item_image_view_margin">16dp</dimen>
+    <dimen name="repository_name_text_view_text_size">17sp</dimen>
+    <dimen name="repository_name_text_view_line_spacing_extra">5sp</dimen>
+    <dimen name="repository_name_text_view_top_margin">26dp</dimen>
+    <dimen name="star_image_view_margin">4dp</dimen>
+    <dimen name="number_of_stars_text_view_text_size">17sp</dimen>
+    <dimen name="number_of_stars_text_view_line_spacing_extra">5sp</dimen>
+    <dimen name="number_of_stars_text_view_margin_start">4dp</dimen>
+    <dimen name="forward_icon_margin_end">16dp</dimen>
 </resources>

@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:text="@string/search_text_view"
         android:textSize="@dimen/search_text_view_text_size"
-        android:letterSpacing="0.41sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textStyle="bold"
@@ -32,7 +31,7 @@
         android:layout_marginEnd="@dimen/screen_1_start_and_end_margin"
         android:layout_marginTop="@dimen/search_edit_text_top_margin"
         android:drawableStart="@drawable/ic_search"
-        android:background="@drawable/edit_text_rounded_corners" />
+        android:background="@drawable/rounded_corners_shape" />
 
     <TextView
         android:id="@+id/repositories_text_view_id"
