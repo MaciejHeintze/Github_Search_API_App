@@ -15,8 +15,8 @@
 
     <ImageView
         android:id="@+id/repository_item_image_view_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/repository_image_view_size"
+        android:layout_height="@dimen/repository_image_view_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +33,8 @@
         android:lineSpacingExtra="@dimen/repository_name_text_view_line_spacing_extra"
         app:layout_constraintStart_toEndOf="@id/repository_item_image_view_id"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/repository_name_text_view_top_margin"/>
+        android:layout_marginTop="@dimen/repository_name_text_view_top_margin"
+        android:layout_marginStart="16dp"/>
 
     <ImageView
         android:id="@+id/star_image_id"

@@ -22,4 +22,5 @@
     <dimen name="number_of_stars_text_view_line_spacing_extra">5sp</dimen>
     <dimen name="number_of_stars_text_view_margin_start">4dp</dimen>
     <dimen name="forward_icon_margin_end">16dp</dimen>
+    <dimen name="repository_image_view_size">60dp</dimen>
 </resources>
