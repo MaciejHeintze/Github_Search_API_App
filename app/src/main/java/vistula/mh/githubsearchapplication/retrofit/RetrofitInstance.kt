@@ -1,7 +1,8 @@
-package vistula.mh.githubsearchapplication.api
+package vistula.mh.githubsearchapplication.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import vistula.mh.githubsearchapplication.api.Api
 import vistula.mh.githubsearchapplication.api.Constants.Companion.BASE_URL
 
 object RetrofitInstance {
@@ -11,6 +12,7 @@ object RetrofitInstance {
     }
 
     val api: Api by lazy {
-        retrofit.create(Api::class.java)
+        retrofit.create(
+            Api::class.java)
     }
 }
