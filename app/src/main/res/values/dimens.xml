@@ -23,4 +23,43 @@
     <dimen name="number_of_stars_text_view_margin_start">4dp</dimen>
     <dimen name="forward_icon_margin_end">16dp</dimen>
     <dimen name="repository_image_view_size">60dp</dimen>
+
+    <!-- Repository details screen -->
+    <dimen name="back_button_text_size">17sp</dimen>
+    <dimen name="back_button_line_spacing_extra">5sp</dimen>
+    <dimen name="back_button_start_margin">8.5dp</dimen>
+    <dimen name="back_button_drawable_padding">5.5dp</dimen>
+    <dimen name="back_button_top_margin">55dp</dimen>
+    <dimen name="star_icon_start_margin">20dp</dimen>
+    <dimen name="star_icon_bottom_margin">24dp</dimen>
+    <dimen name="number_of_stars_details_text_view_text_size">13sp</dimen>
+    <dimen name="number_of_stars_details_text_view_line_spacing_extra">5sp</dimen>
+    <dimen name="number_of_stars_details_text_view_start_margin">5dp</dimen>
+    <dimen name="repository_author_name_text_size">28sp</dimen>
+    <dimen name="repository_author_name_line_spacing_extra">6sp</dimen>
+    <dimen name="repository_author_name_bottom_margin">6dp</dimen>
+    <dimen name="repo_by_text_view_text_size">15sp</dimen>
+    <dimen name="repo_by_text_view_line_spacing_extra">5sp</dimen>
+    <dimen name="repo_by_text_view_bottom_margin">4dp</dimen>
+    <dimen name="repo_title_text_view_text_size">17sp</dimen>
+    <dimen name="repo_title_text_view_line_spacing_extra">5sp</dimen>
+    <dimen name="repo_title_text_view_top_margin">21dp</dimen>
+    <dimen name="repo_title_text_view_start_margin">20dp</dimen>
+    <dimen name="view_online_button_width">118dp</dimen>
+    <dimen name="view_online_button_height">30dp</dimen>
+    <dimen name="view_online_button_end_margin">16dp</dimen>
+    <dimen name="view_online_text_view_text_size">15sp</dimen>
+    <dimen name="view_online_text_view_line_spacing_extra">5sp</dimen>
+    <dimen name="view_online_text_view_elevation">100dp</dimen>
+    <dimen name="commits_history_text_view_text_size">22sp</dimen>
+    <dimen name="commits_history_text_view_line_spacing_extra">6sp</dimen>
+    <dimen name="commits_history_text_view_start_margin">16dp</dimen>
+    <dimen name="commits_history_text_view_top_margin">39dp</dimen>
+    <dimen name="commits_recycler_view_top_margin">10dp</dimen>
+    <dimen name="share_repo_button_start_end_margin">16dp</dimen>
+    <dimen name="share_repo_button_top_margin">24dp</dimen>
+    <dimen name="share_repo_button_text_text_size">17sp</dimen>
+    <dimen name="share_repo_button_text_line_spacing_extra">5sp</dimen>
+    <dimen name="share_repo_button_text_elevation">100dp</dimen>
+    <dimen name="share_repo_button_text_drawable_padding">9dp</dimen>
 </resources>

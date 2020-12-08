@@ -2,4 +2,9 @@
     <string name="app_name">Github Search Application</string>
     <string name="search_text_view">Search</string>
     <string name="repositories_text_view">Repositories</string>
+    <string name="back_button_text">Back</string>
+    <string name="repo_by_text">REPO BY</string>
+    <string name="view_online_button_text">View online</string>
+    <string name="commits_history_text">Commits History</string>
+    <string name="share_repo_button_text">Share Repo</string>
 </resources>

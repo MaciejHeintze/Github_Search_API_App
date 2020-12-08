@@ -3,4 +3,9 @@
     <string name="app_name">Github Search Application</string>
     <string name="search_text_view">Szukaj</string>
     <string name="repositories_text_view">Repozytoria</string>
+    <string name="back_button_text">Cofnij</string>
+    <string name="repo_by_text">Repozytorium: </string>
+    <string name="view_online_button_text">Wyświetl online</string>
+    <string name="commits_history_text">Historia commitów</string>
+    <string name="share_repo_button_text">Udostępnij Repo</string>
 </resources>
