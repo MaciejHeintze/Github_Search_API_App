@@ -1,62 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/search_text_view_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/search_text_view"
-        android:textSize="@dimen/search_text_view_text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="bold"
-        android:layout_marginStart="@dimen/screen_1_start_and_end_margin"
-        android:layout_marginTop="@dimen/search_text_view_top_margin"
-        android:textColor="@color/colorBlack"/>
-
-    <EditText
-        android:id="@+id/search_edit_text_id"
+    android:layout_width="match_parent">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/main_content"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/repository_list_graph"
+        app:defaultNavHost="true"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/search_edit_text_height"
-        app:layout_constraintStart_toStartOf="@id/search_text_view_id"
-        app:layout_constraintTop_toBottomOf="@id/search_text_view_id"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="@dimen/screen_1_start_and_end_margin"
-        android:layout_marginEnd="@dimen/screen_1_start_and_end_margin"
-        android:layout_marginTop="@dimen/search_edit_text_top_margin"
-        android:drawableStart="@drawable/ic_search"
-        android:background="@drawable/rounded_corners_shape" />
-
-    <TextView
-        android:id="@+id/repositories_text_view_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="@dimen/repositories_text_view_text_size"
-        android:textColor="@color/colorBlack"
-        android:letterSpacing="0.02"
-        android:lineSpacingExtra="@dimen/repositories_line_spacing_extra"
-        android:text="@string/repositories_text_view"
-        android:layout_marginTop="@dimen/repositories_top_margin"
-        android:layout_marginStart="@dimen/screen_1_start_and_end_margin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_edit_text_id"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/recycler_view_top_margin"
-        android:layout_marginStart="@dimen/screen_1_start_and_end_margin"
-        android:layout_marginEnd="@dimen/screen_1_start_and_end_margin"
-        app:layout_constraintStart_toStartOf="@id/repositories_text_view_id"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/repositories_text_view_id"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent" />
+</FrameLayout>

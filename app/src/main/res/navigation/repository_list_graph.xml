@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/repository_list_graph"
+    app:startDestination="@id/searchRepositoryFragment">
+
+    <fragment
+        android:id="@+id/searchRepositoryFragment"
+        android:name="vistula.mh.githubsearchapplication.ui.SearchRepositoryFragment"
+        android:label="SearchRepositoryFragment" />
+</navigation>
