@@ -1,6 +1,8 @@
 package vistula.mh.githubsearchapplication
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -35,13 +37,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun getInputRepositoryName(){
         search_edit_text_id.addTextChangedListener(object : TextWatcher {
+
+            var handler: Handler = Handler(Looper.getMainLooper())
+            var workRunnable: Runnable? = null
+
             override fun afterTextChanged(mEdit: Editable) {
-                if(dataList.isNotEmpty()){
-                    dataList.clear()
-                }
                 if(mEdit.length > 3) {
-                    repositoryNameSearchQuery = mEdit.toString()
-                    fetchData(repositoryNameSearchQuery)
+                    workRunnable = Runnable { fetchDataByRepositoryName(mEdit.toString()) }
+                    handler.postDelayed(workRunnable!!, 1000)
                 }
             }
             override fun beforeTextChanged(
@@ -59,6 +62,20 @@ class MainActivity : AppCompatActivity() {
             ) {
             }
         })
+    }
+
+    private fun fetchDataByRepositoryName(mEdit: String){
+        if(dataList.isNotEmpty()){
+            dataList.clear()
+            repositoryAdapter.notifyDataSetChanged()
+        }
+        repositoryNameSearchQuery = mEdit
+        if(!repositoryNameSearchQuery.isNullOrEmpty()){
+            fetchData(repositoryNameSearchQuery)
+        }else{
+            dataList.clear()
+            repositoryAdapter.notifyDataSetChanged()
+        }
     }
 
     private fun setupRecyclerView(){
