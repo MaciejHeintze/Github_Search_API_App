@@ -62,4 +62,23 @@
     <dimen name="share_repo_button_text_line_spacing_extra">5sp</dimen>
     <dimen name="share_repo_button_text_elevation">100dp</dimen>
     <dimen name="share_repo_button_text_drawable_padding">9dp</dimen>
+
+    <!-- Repository details commits list item -->
+    <dimen name="card_view_height">111dp</dimen>
+    <dimen name="commit_number_circle_size">36dp</dimen>
+    <dimen name="commit_number_circle_start_margin">20dp</dimen>
+    <dimen name="commit_number_circle_top_margin">26dp</dimen>
+    <dimen name="commit_author_name_text_view_text_size">11sp</dimen>
+    <dimen name="commit_author_name_text_view_line_spacing_extra">2sp</dimen>
+    <dimen name="commit_author_name_text_view_top_margin">16dp</dimen>
+    <dimen name="commit_author_name_text_view_start_margin">20dp</dimen>
+    <dimen name="commit_author_email_text_view_text_size">17sp</dimen>
+    <dimen name="commit_author_email_text_view_line_spacing_extra">5sp</dimen>
+    <dimen name="commit_author_email_text_view_top_margin">2dp</dimen>
+    <dimen name="commit_message_text_view_width">283dp</dimen>
+    <dimen name="commit_message_text_view_height">44dp</dimen>
+    <dimen name="commit_message_text_view_text_size">17sp</dimen>
+    <dimen name="commit_message_text_view_line_spacing_extra">5sp</dimen>
+    <dimen name="divider_line_text_view_height">1dp</dimen>
+    <dimen name="divider_line_text_view_margin_start">20dp</dimen>
 </resources>

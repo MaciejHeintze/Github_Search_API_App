@@ -7,4 +7,5 @@
     <string name="view_online_button_text">View online</string>
     <string name="commits_history_text">Commits History</string>
     <string name="share_repo_button_text">Share Repo</string>
+    <string name="commit_author_name_text_view">COMMIT AUTHOR NAME</string>
 </resources>
