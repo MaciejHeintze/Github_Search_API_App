@@ -1,6 +1,7 @@
 package vistula.mh.githubsearchapplication.ui
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -41,6 +42,7 @@ class RepositoryDetailsFragment : Fragment() {
         onBackButtonPressed(view)
         fetchData(login,name)
         onShareButtonPressed(view)
+        onViewOnlineButtonPressed(view)
         return view
     }
 
@@ -51,6 +53,12 @@ class RepositoryDetailsFragment : Fragment() {
         i.putExtra(Intent.EXTRA_SUBJECT, name)
         i.putExtra(Intent.EXTRA_TEXT, repositoryUrl)
         startActivity(Intent.createChooser(i, "Share repository URL"))
+        }
+    }
+
+    private fun onViewOnlineButtonPressed(view: View){
+        view.view_online_button_id.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(repositoryUrl)))
         }
     }
 
