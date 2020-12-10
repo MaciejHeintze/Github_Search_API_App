@@ -17,6 +17,7 @@ const val AVATAR_ID = "avatar"
 const val LOGIN_ID = "login"
 const val STARS_ID = "stars"
 const val NAME_ID = "name"
+const val URL_ID = "url"
 
 class RepositoryAdapter(private val dataList: MutableList<GithubModel>) : RecyclerView.Adapter<RepositoryHolder>() {
 
@@ -45,6 +46,8 @@ class RepositoryAdapter(private val dataList: MutableList<GithubModel>) : Recycl
         val repositoryIcon = data.items[position].owner.avatarUrl
         var login = data.items[position].owner.login
         var name = data.items[position].name
+        val repositoryUrl = data.items[position].htmlUrl
+
         Glide.with(context)
             .load(repositoryIcon)
             .into(icon)
@@ -54,7 +57,8 @@ class RepositoryAdapter(private val dataList: MutableList<GithubModel>) : Recycl
                 AVATAR_ID to repositoryIcon,
                 STARS_ID to stars,
                 LOGIN_ID to login,
-                NAME_ID to name
+                NAME_ID to name,
+                URL_ID to repositoryUrl
             )
             it.findNavController().navigate(R.id.action_searchRepositoryFragment_to_repositoryDetailsFragment, bundle)
         }
