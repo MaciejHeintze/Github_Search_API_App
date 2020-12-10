@@ -5,11 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import androidx.core.os.bundleOf
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.repository_item.view.*
 import vistula.mh.githubsearchapplication.R
 import vistula.mh.githubsearchapplication.model.GithubModel
+
+const val AVATAR_ID = "avatar"
+const val LOGIN_ID = "login"
+const val STARS_ID = "stars"
 
 class RepositoryAdapter(private val dataList: MutableList<GithubModel>) : RecyclerView.Adapter<RepositoryHolder>() {
 
@@ -19,7 +26,7 @@ class RepositoryAdapter(private val dataList: MutableList<GithubModel>) : Recycl
         context=parent.context
         return RepositoryHolder(
             LayoutInflater
-                .from(context)
+                .from(parent.context)
                 .inflate(R.layout.repository_item,parent,false)
         )
     }
@@ -34,11 +41,18 @@ class RepositoryAdapter(private val dataList: MutableList<GithubModel>) : Recycl
         val numberOfStars = holder.itemView.number_of_stars_text_view_id
         repositoryName.text = data.items[position].name
         numberOfStars.text = data.items[position].stargazersCount.toString()
+        var stars = data.items[position].stargazersCount.toString()
         val repositoryIcon = data.items[position].owner.avatarUrl
+        var login = data.items[position].owner.login
 
         Glide.with(context)
             .load(repositoryIcon)
             .into(icon)
+
+        holder.itemView.setOnClickListener {
+            val bundle = bundleOf(AVATAR_ID to repositoryIcon, STARS_ID to stars, LOGIN_ID to login)
+            it.findNavController().navigate(R.id.action_searchRepositoryFragment_to_repositoryDetailsFragment, bundle)
+        }
     }
 }
 

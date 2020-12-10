@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
 import kotlinx.android.synthetic.main.repository_search_layout.*
+import kotlinx.android.synthetic.main.repository_search_layout.view.*
 import vistula.mh.githubsearchapplication.R
 import vistula.mh.githubsearchapplication.TAG
 import vistula.mh.githubsearchapplication.model.GithubModel
@@ -35,13 +36,20 @@ class SearchRepositoryFragment : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.repository_search_layout, container, false)
+        val view = inflater.inflate(R.layout.repository_search_layout, container, false)
+        val list = mutableListOf<GithubModel>()
+        repositoryAdapter= RepositoryAdapter(list)
+        view.recycler_view_id.layoutManager= LinearLayoutManager(context)
+        view.recycler_view_id.addItemDecoration(DividerItemDecoration(context, OrientationHelper.VERTICAL))
+        view.recycler_view_id.adapter=repositoryAdapter
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecyclerView()
         getInputRepositoryName()
+
+
     }
 
     private fun setupRecyclerView(){
@@ -103,6 +111,7 @@ class SearchRepositoryFragment : Fragment(){
         viewModel.myResponse.observe(this, Observer { response ->
             if(response.isSuccessful){
                 response.body()?.let { dataList.add(it) }
+                setupRecyclerView()
                 repositoryAdapter.notifyDataSetChanged()
             }else{
                 Log.d(TAG, response.message())
