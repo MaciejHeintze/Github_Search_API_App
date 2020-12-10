@@ -66,9 +66,10 @@ class SearchRepositoryFragment : Fragment(){
             var workRunnable: Runnable? = null
 
             override fun afterTextChanged(mEdit: Editable) {
+                clear()
                 if(mEdit.length > 3) {
                     workRunnable = Runnable { fetchDataByRepositoryName(mEdit.toString()) }
-                    handler.postDelayed(workRunnable!!, 1000)
+                    handler.postDelayed(workRunnable!!, 600)
                 }
             }
             override fun beforeTextChanged(
@@ -88,6 +89,11 @@ class SearchRepositoryFragment : Fragment(){
         })
     }
 
+    fun clear() {
+        val size: Int = dataList.size
+        dataList.clear()
+        repositoryAdapter.notifyItemRangeRemoved(0, size)
+    }
 
     private fun fetchDataByRepositoryName(mEdit: String){
         if(dataList.isNotEmpty()){
