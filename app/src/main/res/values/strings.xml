@@ -8,4 +8,5 @@
     <string name="commits_history_text">Commits History</string>
     <string name="share_repo_button_text">Share Repo</string>
     <string name="commit_author_name_text_view">COMMIT AUTHOR NAME</string>
+    <string name="number_of_stars_text">"Number of stars (%1$s)"</string>
 </resources>

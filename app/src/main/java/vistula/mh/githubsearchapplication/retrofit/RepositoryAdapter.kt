@@ -42,10 +42,10 @@ class RepositoryAdapter(private val dataList: MutableList<GithubModel>) : Recycl
         val numberOfStars = holder.itemView.number_of_stars_text_view_id
         repositoryName.text = data.items[position].name
         numberOfStars.text = data.items[position].stargazersCount.toString()
-        var stars = data.items[position].stargazersCount.toString()
+        val stars = data.items[position].stargazersCount.toString()
         val repositoryIcon = data.items[position].owner.avatarUrl
-        var login = data.items[position].owner.login
-        var name = data.items[position].name
+        val login = data.items[position].owner.login
+        val name = data.items[position].name
         val repositoryUrl = data.items[position].htmlUrl
 
         Glide.with(context)

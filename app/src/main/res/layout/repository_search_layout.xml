@@ -30,7 +30,8 @@
         android:layout_marginEnd="@dimen/screen_1_start_and_end_margin"
         android:layout_marginTop="@dimen/search_edit_text_top_margin"
         android:drawableStart="@drawable/ic_search"
-        android:background="@drawable/rounded_corners_shape" />
+        android:background="@drawable/rounded_corners_shape"
+        android:inputType="textAutoComplete" />
 
     <TextView
         android:id="@+id/repositories_text_view_id"

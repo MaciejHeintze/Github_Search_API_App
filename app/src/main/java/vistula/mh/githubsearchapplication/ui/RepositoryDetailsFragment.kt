@@ -84,7 +84,8 @@ class RepositoryDetailsFragment : Fragment() {
             .load(avatar)
             .into(view.repository_avatar_id)
 
-        view.number_of_stars_details_text_view_id.text = "Number of stars ($stars)"
+        val starsNumber = getString(R.string.number_of_stars_text, stars)
+        view.number_of_stars_details_text_view_id.text = starsNumber
         view.repository_author_name_id.text = login
     }
 

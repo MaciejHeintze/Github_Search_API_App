@@ -9,4 +9,5 @@
     <string name="commits_history_text">Historia commitów</string>
     <string name="share_repo_button_text">Udostępnij Repo</string>
     <string name="commit_author_name_text_view">IMIĘ AUTORA COMMITU</string>
+    <string name="number_of_stars_text">"Ilość gwiazdek (%1$s)"</string>
 </resources>
