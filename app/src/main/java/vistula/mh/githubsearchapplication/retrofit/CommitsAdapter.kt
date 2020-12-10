@@ -44,6 +44,8 @@ class CommitsAdapter(private val dataList: MutableList<List<CommitModelItem>>) :
         commitMessage.text = list.commit.message
         commitAuthorName.text = list.commit.committer.name
         commitAuthorEmail.text = list.commit.committer.email
+
+        holder.itemView.commit_number_text_view_value_id.text = (position + 1).toString()
     }
 }
 
