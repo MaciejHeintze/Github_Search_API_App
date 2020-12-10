@@ -1,19 +1,31 @@
 package vistula.mh.githubsearchapplication.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.OrientationHelper
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.fragment_repository_details.*
 import kotlinx.android.synthetic.main.fragment_repository_details.view.*
 import vistula.mh.githubsearchapplication.R
-import vistula.mh.githubsearchapplication.retrofit.AVATAR_ID
-import vistula.mh.githubsearchapplication.retrofit.LOGIN_ID
-import vistula.mh.githubsearchapplication.retrofit.STARS_ID
+import vistula.mh.githubsearchapplication.TAG
+import vistula.mh.githubsearchapplication.model.commitss.CommitModelItem
+import vistula.mh.githubsearchapplication.retrofit.*
 
 class RepositoryDetailsFragment : Fragment() {
+
+    private lateinit var viewModel: MainViewModel
+    private var dataList: MutableList<List<CommitModelItem>> = mutableListOf()
+    private lateinit var commitsAdapter: CommitsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,7 +34,13 @@ class RepositoryDetailsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_repository_details, container, false)
         initValues(view)
         onBackButtonPressed(view)
+       // fetchData("AdrianRomanski","pjatk-projekt") TODO-add login and repo name
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+      //  fetchData("AdrianRomanski","pjatk-projekt") TODO-add login and repo name
     }
 
     private fun onBackButtonPressed(view: View){
@@ -41,5 +59,28 @@ class RepositoryDetailsFragment : Fragment() {
             .into(view.repository_avatar_id)
         view.number_of_stars_details_text_view_id.text = "Number of stars ($stars)"
         view.repository_author_name_id.text = login
+    }
+
+    private fun fetchData(login: String, name: String){
+        val repository = Repository()
+        val viewModelFactory = MainViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+        viewModel.getLastCommits(login, name)
+        viewModel.commitResponse.observe(this as LifecycleOwner, Observer { response ->
+            if(response.isSuccessful){
+                response.body()?.let { dataList.add(it) }
+                setupRecyclerView()
+                commitsAdapter.notifyDataSetChanged()
+            }else{
+                Log.d(TAG, response.message())
+            }
+        })
+    }
+
+    private fun setupRecyclerView(){
+        commitsAdapter = CommitsAdapter(dataList)
+        commits_recycler_view_id.layoutManager= LinearLayoutManager(context)
+        commits_recycler_view_id.addItemDecoration(DividerItemDecoration(context, OrientationHelper.VERTICAL))
+        commits_recycler_view_id.adapter=commitsAdapter
     }
 }

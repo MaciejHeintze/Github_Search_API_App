@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.repository_search_layout.*
 import kotlinx.android.synthetic.main.repository_search_layout.view.*
 import vistula.mh.githubsearchapplication.R
 import vistula.mh.githubsearchapplication.TAG
-import vistula.mh.githubsearchapplication.model.GithubModel
+import vistula.mh.githubsearchapplication.model.repository.GithubModel
 import vistula.mh.githubsearchapplication.retrofit.MainViewModel
 import vistula.mh.githubsearchapplication.retrofit.MainViewModelFactory
 import vistula.mh.githubsearchapplication.retrofit.Repository

@@ -1,4 +1,4 @@
-package vistula.mh.githubsearchapplication.model
+package vistula.mh.githubsearchapplication.model.repository
 
 import com.google.gson.annotations.SerializedName
 

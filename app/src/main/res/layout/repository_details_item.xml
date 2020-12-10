@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/card_view_height"
+    android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,9 +55,12 @@
             app:layout_constraintTop_toBottomOf="@id/commit_author_name_text_view_id" />
         <TextView
             android:id="@+id/commit_message_text_view_id"
-            android:layout_width="@dimen/commit_message_text_view_width"
+            android:layout_width="0dp"
             android:layout_height="@dimen/commit_message_text_view_height"
+            android:layout_marginEnd="16dp"
             android:textStyle="normal"
+            android:scrollHorizontally="false"
+            android:layout_marginBottom="12dp"
             android:textSize="@dimen/commit_message_text_view_text_size"
             android:textColor="@color/darkWhite"
             android:letterSpacing="-0.02"

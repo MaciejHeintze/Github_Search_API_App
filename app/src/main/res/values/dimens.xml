@@ -64,7 +64,7 @@
     <dimen name="share_repo_button_text_drawable_padding">9dp</dimen>
 
     <!-- Repository details commits list item -->
-    <dimen name="card_view_height">111dp</dimen>
+    <dimen name="card_view_height">90dp</dimen>
     <dimen name="commit_number_circle_size">36dp</dimen>
     <dimen name="commit_number_circle_start_margin">20dp</dimen>
     <dimen name="commit_number_circle_top_margin">26dp</dimen>
