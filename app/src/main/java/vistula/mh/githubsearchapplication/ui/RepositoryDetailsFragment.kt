@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_repository_details.*
 import kotlinx.android.synthetic.main.fragment_repository_details.view.*
 import vistula.mh.githubsearchapplication.R
 import vistula.mh.githubsearchapplication.TAG
-import vistula.mh.githubsearchapplication.model.commitss.CommitModelItem
+import vistula.mh.githubsearchapplication.model.commits.CommitModelItem
 import vistula.mh.githubsearchapplication.retrofit.*
 
 class RepositoryDetailsFragment : Fragment() {
@@ -26,6 +26,8 @@ class RepositoryDetailsFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
     private var dataList: MutableList<List<CommitModelItem>> = mutableListOf()
     private lateinit var commitsAdapter: CommitsAdapter
+    private lateinit var login: String
+    private lateinit var name: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,13 +36,13 @@ class RepositoryDetailsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_repository_details, container, false)
         initValues(view)
         onBackButtonPressed(view)
-       // fetchData("AdrianRomanski","pjatk-projekt") TODO-add login and repo name
+        fetchData(login,name)
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-      //  fetchData("AdrianRomanski","pjatk-projekt") TODO-add login and repo name
+        fetchData(login,name)
     }
 
     private fun onBackButtonPressed(view: View){
@@ -51,9 +53,9 @@ class RepositoryDetailsFragment : Fragment() {
 
     private fun initValues(view: View){
         val avatar = arguments?.getString(AVATAR_ID)
-        val login = arguments?.getString(LOGIN_ID)
+        login = arguments?.getString(LOGIN_ID).toString()
         val stars = arguments?.getString(STARS_ID)
-
+        name = arguments?.getString(NAME_ID).toString()
         Glide.with(this)
             .load(avatar)
             .into(view.repository_avatar_id)

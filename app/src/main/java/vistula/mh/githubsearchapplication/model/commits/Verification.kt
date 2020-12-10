@@ -1,7 +1,5 @@
-package vistula.mh.githubsearchapplication.model.commitss
+package vistula.mh.githubsearchapplication.model.commits
 
-
-import com.google.gson.annotations.SerializedName
 
 data class Verification(
     var payload: String = "",

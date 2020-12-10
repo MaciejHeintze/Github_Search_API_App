@@ -1,7 +1,7 @@
 package vistula.mh.githubsearchapplication.retrofit
 
 import retrofit2.Response
-import vistula.mh.githubsearchapplication.model.commitss.CommitModelItem
+import vistula.mh.githubsearchapplication.model.commits.CommitModelItem
 import vistula.mh.githubsearchapplication.model.repository.GithubModel
 
 class Repository {

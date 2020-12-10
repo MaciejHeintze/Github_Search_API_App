@@ -8,7 +8,7 @@ import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.repository_details_item.view.*
 import vistula.mh.githubsearchapplication.R
-import vistula.mh.githubsearchapplication.model.commitss.CommitModelItem
+import vistula.mh.githubsearchapplication.model.commits.CommitModelItem
 
 
 class CommitsAdapter(private val dataList: MutableList<List<CommitModelItem>>) : RecyclerView.Adapter<CommitsHolder>() {

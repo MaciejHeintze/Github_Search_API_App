@@ -16,6 +16,7 @@ import vistula.mh.githubsearchapplication.model.repository.GithubModel
 const val AVATAR_ID = "avatar"
 const val LOGIN_ID = "login"
 const val STARS_ID = "stars"
+const val NAME_ID = "name"
 
 class RepositoryAdapter(private val dataList: MutableList<GithubModel>) : RecyclerView.Adapter<RepositoryHolder>() {
 
@@ -43,13 +44,18 @@ class RepositoryAdapter(private val dataList: MutableList<GithubModel>) : Recycl
         var stars = data.items[position].stargazersCount.toString()
         val repositoryIcon = data.items[position].owner.avatarUrl
         var login = data.items[position].owner.login
-
+        var name = data.items[position].name
         Glide.with(context)
             .load(repositoryIcon)
             .into(icon)
 
         holder.itemView.setOnClickListener {
-            val bundle = bundleOf(AVATAR_ID to repositoryIcon, STARS_ID to stars, LOGIN_ID to login)
+            val bundle = bundleOf(
+                AVATAR_ID to repositoryIcon,
+                STARS_ID to stars,
+                LOGIN_ID to login,
+                NAME_ID to name
+            )
             it.findNavController().navigate(R.id.action_searchRepositoryFragment_to_repositoryDetailsFragment, bundle)
         }
     }

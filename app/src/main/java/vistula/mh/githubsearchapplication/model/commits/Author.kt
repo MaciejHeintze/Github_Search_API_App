@@ -1,9 +1,9 @@
-package vistula.mh.githubsearchapplication.model.commitss
+package vistula.mh.githubsearchapplication.model.commits
 
 
 import com.google.gson.annotations.SerializedName
 
-data class CommitterX(
+data class Author(
     @SerializedName("avatar_url")
     var avatarUrl: String = "",
     @SerializedName("events_url")

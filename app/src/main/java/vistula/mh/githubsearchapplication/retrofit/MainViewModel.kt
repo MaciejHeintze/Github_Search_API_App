@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import retrofit2.Response
-import vistula.mh.githubsearchapplication.model.commitss.CommitModelItem
+import vistula.mh.githubsearchapplication.model.commits.CommitModelItem
 import vistula.mh.githubsearchapplication.model.repository.GithubModel
 
 class MainViewModel(private val repository: Repository) : ViewModel() {

@@ -4,7 +4,7 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import vistula.mh.githubsearchapplication.model.commitss.CommitModelItem
+import vistula.mh.githubsearchapplication.model.commits.CommitModelItem
 import vistula.mh.githubsearchapplication.model.repository.GithubModel
 
 interface Api{
